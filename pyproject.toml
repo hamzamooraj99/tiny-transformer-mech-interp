@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tiny-transformer-mech-interp"
+version = "0.1.0"
+description = "From-scratch tiny causal transformer for mechanistic interpretability on synthetic induction and algorithmic tasks."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Hamza Mooraj"}]
+
+dependencies = [
+  "torch>=2.3",
+  "numpy>=2.0",
+  "matplotlib>=3.7",
+  "tqdm>=4.60",
+]
+
+[project.urls]
+Repository = "https://github.com/hamzamooraj99/tiny-transformer-mech-interp"
