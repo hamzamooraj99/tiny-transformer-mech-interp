@@ -1,0 +1,38 @@
+{
+  "os":  "Windows-10-10.0.22631-SP0",
+  "python":  "CPython 3.11.11",
+  "startedAt":  "2026-03-01T14:42:06.403671Z",
+  "program":  "-m src.train",
+  "git":  {
+    "remote":  "git@github.com:hamzamooraj99/tiny-transformer-mech-interp.git",
+    "commit":  "8e447896edd04b0458ec17b4241d199930439571"
+  },
+  "email":  "hhm2000@hw.ac.uk",
+  "root":  "C:\\Users\\hamza\\Documents\\AI\\tiny-transformer-mech-interp",
+  "host":  "C-173-G14",
+  "executable":  "C:\\Users\\hamza\\anaconda3\\envs\\unsloth_env\\python.exe",
+  "cpu_count":  8,
+  "cpu_count_logical":  16,
+  "gpu":  "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "999261802496",
+      "used":  "538280448000"
+    }
+  },
+  "memory":  {
+    "total":  "25131368448"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "memoryTotal":  "6442450944",
+      "cudaCores":  3840,
+      "architecture":  "Ampere",
+      "uuid":  "GPU-5599f56e-1e3c-9467-7079-b7ff85c16539"
+    }
+  ],
+  "cudaVersion":  "12.7",
+  "writerId":  "y6fezn349occgk2dz92424wdfak0l42u"
+}

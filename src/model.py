@@ -1,3 +1,43 @@
+"""
+model.py
+
+From-scratch components for a minimal decoder-only (causal) transformer,
+designed for controlled mechanistic interpretability experiments on
+synthetic next-token prediction tasks.
+
+This module implements a small GPT-style architecture using explicit
+PyTorch tensor operations rather than higher-level transformer utilities
+(e.g., nn.MultiheadAttention / nn.Transformer). The focus is on clarity
+of shapes and computations to support inspection of internal activations
+and attention patterns.
+
+Included components:
+    - LayerNorm:
+        Feature-wise normalization applied independently per token.
+    - MultiHeadSelfAttention:
+        Scaled dot-product self-attention with a causal (triangular) mask,
+        returning optional attention weight matrices for analysis.
+    - MLP:
+        Position-wise feed-forward network using GELU nonlinearity.
+    - TransformerBlock:
+        Pre-norm block with two residual sublayers:
+            x = x + Attention(LN(x))
+            x = x + MLP(LN(x))
+    - TinyCausalTransformer:
+        End-to-end model mapping token IDs (B, T) to logits (B, T, vocab_size)
+        via token/positional embeddings, a stack of TransformerBlocks, and a
+        final linear projection.
+
+Primary intended use:
+    - Train on synthetic induction-style sequences (see data.py).
+    - Inspect learned attention heads and internal representations.
+
+Notes:
+    - This file does not include a training loop; see train.py.
+    - Softmax over vocabulary is intentionally omitted from the model output;
+      logits are returned for use with cross-entropy loss.
+"""
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -316,24 +356,24 @@ class TinyCausalTransformer(nn.Module):
 
 
 
-if __name__ == "__main__":
-    # man = MultiHeadSelfAttention(d_model=8, n_heads=2)
-    # random = torch.randn(2, 4, 8)
-    # y, attn = man.forward(random, return_attn=True)
-    # print(y.shape)
-    # print(attn.shape)
+# if __name__ == "__main__":
+#     # man = MultiHeadSelfAttention(d_model=8, n_heads=2)
+#     # random = torch.randn(2, 4, 8)
+#     # y, attn = man.forward(random, return_attn=True)
+#     # print(y.shape)
+#     # print(attn.shape)
 
-    # mlp = MLP(d_model=8, hidden_dim=32)
-    # x = torch.randn(2, 4, 8)
-    # x = mlp.forward(x)
-    # print(x.shape)
+#     # mlp = MLP(d_model=8, hidden_dim=32)
+#     # x = torch.randn(2, 4, 8)
+#     # x = mlp.forward(x)
+#     # print(x.shape)
 
-    # block = TransformerBlock(d_model=8, n_heads=2, mlp_hidden_dim=32)
-    # x = torch.randn(2, 4, 8)
-    # x = block.forward(x)
-    # print(x.shape)
+#     # block = TransformerBlock(d_model=8, n_heads=2, mlp_hidden_dim=32)
+#     # x = torch.randn(2, 4, 8)
+#     # x = block.forward(x)
+#     # print(x.shape)
 
-    model = TinyCausalTransformer(20, 8, 2, 2, 32, 32)
-    idx = torch.randint(0, 20, (2, 4))
-    logits = model.forward(idx=idx)
-    print(logits.shape)
+#     model = TinyCausalTransformer(20, 8, 2, 2, 32, 32)
+#     idx = torch.randint(0, 20, (2, 4))
+#     logits = model.forward(idx=idx)
+#     print(logits.shape)
