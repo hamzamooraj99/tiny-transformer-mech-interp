@@ -1,6 +1,5 @@
 import torch
 
-check = torch.Tensor([0,1])
+s = [1] * 4
 
-print(check.shape)
-print(check)
+print(s)
