@@ -1,0 +1,23 @@
+2026-03-03 15:12:57,966 INFO    MainThread:13524 [wandb_setup.py:_flush():81] Current SDK version is 0.21.3
+2026-03-03 15:12:57,966 INFO    MainThread:13524 [wandb_setup.py:_flush():81] Configure stats pid to 13524
+2026-03-03 15:12:57,966 INFO    MainThread:13524 [wandb_setup.py:_flush():81] Loading settings from C:\Users\hamza\.config\wandb\settings
+2026-03-03 15:12:57,966 INFO    MainThread:13524 [wandb_setup.py:_flush():81] Loading settings from C:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\wandb\settings
+2026-03-03 15:12:57,966 INFO    MainThread:13524 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-03-03 15:12:57,966 INFO    MainThread:13524 [wandb_init.py:setup_run_log_directory():686] Logging user logs to C:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\wandb\run-20260303_151257-q6i1m9xk\logs\debug.log
+2026-03-03 15:12:57,967 INFO    MainThread:13524 [wandb_init.py:setup_run_log_directory():687] Logging internal logs to C:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\wandb\run-20260303_151257-q6i1m9xk\logs\debug-internal.log
+2026-03-03 15:12:57,967 INFO    MainThread:13524 [wandb_init.py:init():813] calling init triggers
+2026-03-03 15:12:57,967 INFO    MainThread:13524 [wandb_init.py:init():818] wandb.init called with sweep_config: {}
+config: {'vocab_size': 20, 'seq_len': 32, 'pattern_len': 8, 'batch_size': 64, 'max_seq_len': 32, 'd_model': 64, 'n_heads': 4, 'n_layers': 2, 'mlp_hidden_dim': 256, 'p_corrupt_eval': 0.0, 'eval_batches': 50, 'checkpoint_path': 'tiny_transformer.pt', 'mode': 'induction', '_wandb': {}}
+2026-03-03 15:12:57,967 INFO    MainThread:13524 [wandb_init.py:init():854] starting backend
+2026-03-03 15:13:00,208 INFO    MainThread:13524 [wandb_init.py:init():857] sending inform_init request
+2026-03-03 15:13:00,225 INFO    MainThread:13524 [wandb_init.py:init():865] backend started and connected
+2026-03-03 15:13:00,227 INFO    MainThread:13524 [wandb_init.py:init():936] updated telemetry
+2026-03-03 15:13:00,278 INFO    MainThread:13524 [wandb_init.py:init():960] communicating run to backend with 90.0 second timeout
+2026-03-03 15:13:01,408 INFO    MainThread:13524 [wandb_init.py:init():1011] starting run threads in backend
+2026-03-03 15:13:01,868 INFO    MainThread:13524 [wandb_run.py:_console_start():2494] atexit reg
+2026-03-03 15:13:01,869 INFO    MainThread:13524 [wandb_run.py:_redirect():2342] redirect: wrap_raw
+2026-03-03 15:13:01,869 INFO    MainThread:13524 [wandb_run.py:_redirect():2411] Wrapping output streams.
+2026-03-03 15:13:01,869 INFO    MainThread:13524 [wandb_run.py:_redirect():2434] Redirects installed.
+2026-03-03 15:13:01,872 INFO    MainThread:13524 [wandb_init.py:init():1057] run started, returning control to user process
+2026-03-03 15:13:02,419 INFO    wandb-AsyncioManager-main:13524 [service_client.py:_forward_responses():84] Reached EOF.
+2026-03-03 15:13:02,419 INFO    wandb-AsyncioManager-main:13524 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.

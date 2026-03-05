@@ -267,10 +267,16 @@ class TransformerBlock(nn.Module):
         self.ln2 = LayerNorm(d_model=d_model) #Second normalisation layer => separate LN becuase attn changes representation. Re-normalise before applying MLP
         self.mlp = MLP(d_model=d_model, hidden_dim=mlp_hidden_dim) #MLP => Position-wise non-linear transformation - Does not mix tokens, operates independently on each token vector, allows building of complex feature transformations
     
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        x = x + self.attn(self.ln1(x)) #Pre-normalise [self.ln1(...)], Compute attention output [self.attn(...)], Add residual connection [x + ...] => Residual path for attention (learns a correction to x)
-        x = x + self.mlp(self.ln2(x)) #Re-normalise [self.ln2(...)], Apply MLP position-wise transformation [self.mlp(...)], Add residual connection [x + ...] => Residual path for Feed-forward
-        return x
+    def forward(self, x: torch.Tensor, return_attn: bool=False) -> torch.Tensor:
+        if return_attn:
+            attn_out, attn = self.attn(self.ln1(x), return_attn=return_attn)
+            x = x + attn_out
+            x = x + self.mlp(self.ln2(x))
+            return x, attn
+        else:    
+            x = x + self.attn(self.ln1(x)) #Pre-normalise [self.ln1(...)], Compute attention output [self.attn(...)], Add residual connection [x + ...] => Residual path for attention (learns a correction to x)
+            x = x + self.mlp(self.ln2(x)) #Re-normalise [self.ln2(...)], Apply MLP position-wise transformation [self.mlp(...)], Add residual connection [x + ...] => Residual path for Feed-forward
+            return x
 
 class TinyCausalTransformer(nn.Module):
     """
@@ -326,7 +332,7 @@ class TinyCausalTransformer(nn.Module):
 
         self.max_seq_len = max_seq_len
     
-    def forward(self, idx: torch.Tensor) -> torch.Tensor:
+    def forward(self, idx: torch.Tensor, return_attn: bool=False) -> torch.Tensor:
         #Get Shapes
         B, T = idx.shape
         assert T <= self.max_seq_len
@@ -342,9 +348,17 @@ class TinyCausalTransformer(nn.Module):
         #Add Position - Adds positional information to token vectors
         x = x + pos_emb
 
-        #Blocks - Sequentially apply each transformer block
-        for block in self.blocks:
-            x = block(x)
+        #Setup MI
+        if return_attn: 
+            attn_all = []
+            #Blocks - Sequentially apply each transformer block
+            for block in self.blocks:
+                x, attn = block(x, return_attn=return_attn)
+                attn_all.append(attn)
+        else:
+            for block in self.blocks:
+                x = block(x)
+
         
         #Final Norm - Stability and cleaner logits
         x = self.ln_f(x)
@@ -352,6 +366,8 @@ class TinyCausalTransformer(nn.Module):
         #Logits - Project to vocabulary logit
         logits = self.head(x)
 
+        if return_attn:
+            return logits, attn_all
         return logits
 
 
@@ -373,7 +389,7 @@ class TinyCausalTransformer(nn.Module):
 #     # x = block.forward(x)
 #     # print(x.shape)
 
-#     model = TinyCausalTransformer(20, 8, 2, 2, 32, 32)
-#     idx = torch.randint(0, 20, (2, 4))
-#     logits = model.forward(idx=idx)
-#     print(logits.shape)
+#     # model = TinyCausalTransformer(20, 8, 2, 2, 32, 32)
+#     # idx = torch.randint(0, 20, (2, 4))
+#     # logits = model.forward(idx=idx)
+#     # print(logits.shape)

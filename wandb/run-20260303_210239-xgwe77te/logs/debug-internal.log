@@ -1,0 +1,12 @@
+{"time":"2026-03-03T21:02:42.1337191+05:00","level":"INFO","msg":"stream: starting","core version":"0.21.3"}
+{"time":"2026-03-03T21:02:42.5441787+05:00","level":"INFO","msg":"stream: created new stream","id":"xgwe77te"}
+{"time":"2026-03-03T21:02:42.5441787+05:00","level":"INFO","msg":"stream: started","id":"xgwe77te"}
+{"time":"2026-03-03T21:02:42.5441787+05:00","level":"INFO","msg":"writer: started","stream_id":"xgwe77te"}
+{"time":"2026-03-03T21:02:42.5441787+05:00","level":"INFO","msg":"handler: started","stream_id":"xgwe77te"}
+{"time":"2026-03-03T21:02:42.5441787+05:00","level":"INFO","msg":"sender: started","stream_id":"xgwe77te"}
+{"time":"2026-03-03T21:02:47.8239768+05:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"updating run metadata","runtime_seconds":4.5466249},{"desc":"uploading artifact run-xgwe77te-evalaccuracy_bar_table-tmO54A","runtime_seconds":1.8625052},{"desc":"uploading artifact run-xgwe77te-evalloss_bar_table-ditAUw","runtime_seconds":0.3195409}],"total_operations":3}}
+{"time":"2026-03-03T21:02:51.4026273+05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-03T21:02:51.821178+05:00","level":"INFO","msg":"stream: closing","id":"xgwe77te"}
+{"time":"2026-03-03T21:02:51.821178+05:00","level":"INFO","msg":"handler: closed","stream_id":"xgwe77te"}
+{"time":"2026-03-03T21:02:51.821178+05:00","level":"INFO","msg":"sender: closed","stream_id":"xgwe77te"}
+{"time":"2026-03-03T21:02:51.821178+05:00","level":"INFO","msg":"stream: closed","id":"xgwe77te"}

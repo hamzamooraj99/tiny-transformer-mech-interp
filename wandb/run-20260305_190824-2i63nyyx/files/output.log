@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "c:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\src\eval.py", line 254, in <module>
+    main()
+  File "c:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\src\eval.py", line 239, in main
+    metrics = evaluate(
+              ^^^^^^^^^
+  File "C:\Users\hamza\anaconda3\envs\unsloth_env\Lib\site-packages\torch\utils\_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\src\eval.py", line 121, in evaluate
+    seq = generate_batch(
+          ^^^^^^^^^^^^^^^
+  File "c:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\src\data.py", line 128, in generate_batch
+    raise ValueError("Invalid mode: Select from \"induction\" or \"arithmetic\"")
+ValueError: Invalid mode: Select from "induction" or "arithmetic"

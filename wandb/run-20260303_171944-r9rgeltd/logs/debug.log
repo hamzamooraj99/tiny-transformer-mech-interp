@@ -1,0 +1,26 @@
+2026-03-03 17:19:44,574 INFO    MainThread:16844 [wandb_setup.py:_flush():81] Current SDK version is 0.21.3
+2026-03-03 17:19:44,574 INFO    MainThread:16844 [wandb_setup.py:_flush():81] Configure stats pid to 16844
+2026-03-03 17:19:44,574 INFO    MainThread:16844 [wandb_setup.py:_flush():81] Loading settings from C:\Users\hamza\.config\wandb\settings
+2026-03-03 17:19:44,574 INFO    MainThread:16844 [wandb_setup.py:_flush():81] Loading settings from C:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\wandb\settings
+2026-03-03 17:19:44,574 INFO    MainThread:16844 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-03-03 17:19:44,574 INFO    MainThread:16844 [wandb_init.py:setup_run_log_directory():686] Logging user logs to C:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\wandb\run-20260303_171944-r9rgeltd\logs\debug.log
+2026-03-03 17:19:44,586 INFO    MainThread:16844 [wandb_init.py:setup_run_log_directory():687] Logging internal logs to C:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\wandb\run-20260303_171944-r9rgeltd\logs\debug-internal.log
+2026-03-03 17:19:44,586 INFO    MainThread:16844 [wandb_init.py:init():813] calling init triggers
+2026-03-03 17:19:44,586 INFO    MainThread:16844 [wandb_init.py:init():818] wandb.init called with sweep_config: {}
+config: {'vocab_size': 20, 'seq_len': 32, 'pattern_len': 8, 'batch_size': 64, 'max_seq_len': 32, 'd_model': 64, 'n_heads': 4, 'n_layers': 2, 'mlp_hidden_dim': 256, 'seed': 42, 'p_corrupt_eval': 0.0, 'eval_batches': 50, 'checkpoint_path': 'tiny_transformer.pt', 'mode': 'induction', '_wandb': {}}
+2026-03-03 17:19:44,586 INFO    MainThread:16844 [wandb_init.py:init():854] starting backend
+2026-03-03 17:19:47,042 INFO    MainThread:16844 [wandb_init.py:init():857] sending inform_init request
+2026-03-03 17:19:47,071 INFO    MainThread:16844 [wandb_init.py:init():865] backend started and connected
+2026-03-03 17:19:47,072 INFO    MainThread:16844 [wandb_init.py:init():936] updated telemetry
+2026-03-03 17:19:47,111 INFO    MainThread:16844 [wandb_init.py:init():960] communicating run to backend with 90.0 second timeout
+2026-03-03 17:19:48,320 INFO    MainThread:16844 [wandb_init.py:init():1011] starting run threads in backend
+2026-03-03 17:19:48,907 INFO    MainThread:16844 [wandb_run.py:_console_start():2494] atexit reg
+2026-03-03 17:19:48,907 INFO    MainThread:16844 [wandb_run.py:_redirect():2342] redirect: wrap_raw
+2026-03-03 17:19:48,908 INFO    MainThread:16844 [wandb_run.py:_redirect():2411] Wrapping output streams.
+2026-03-03 17:19:48,908 INFO    MainThread:16844 [wandb_run.py:_redirect():2434] Redirects installed.
+2026-03-03 17:19:48,913 INFO    MainThread:16844 [wandb_init.py:init():1057] run started, returning control to user process
+2026-03-03 17:19:49,976 INFO    MainThread:16844 [wandb_run.py:_finish():2260] finishing run hhm2000-heriot-watt-university/Tiny-Transformer-Mech-Interp/r9rgeltd
+2026-03-03 17:19:49,977 INFO    MainThread:16844 [wandb_run.py:_atexit_cleanup():2459] got exitcode: 0
+2026-03-03 17:19:49,977 INFO    MainThread:16844 [wandb_run.py:_restore():2441] restore
+2026-03-03 17:19:49,978 INFO    MainThread:16844 [wandb_run.py:_restore():2447] restore done
+2026-03-03 17:19:51,374 INFO    MainThread:16844 [wandb_run.py:_footer_sync_info():3855] logging synced files

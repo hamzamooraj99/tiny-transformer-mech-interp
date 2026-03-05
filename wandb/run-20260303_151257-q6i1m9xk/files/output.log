@@ -1,0 +1,20 @@
+0.7852822542190552
+Traceback (most recent call last):
+  File "c:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\src\eval.py", line 175, in <module>
+    main()
+  File "c:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\src\eval.py", line 162, in main
+    metrics = evaluate(
+              ^^^^^^^^^
+  File "C:\Users\hamza\anaconda3\envs\unsloth_env\Lib\site-packages\torch\utils\_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\src\eval.py", line 125, in evaluate
+    metrics = eval_one_batch(
+              ^^^^^^^^^^^^^^^
+  File "C:\Users\hamza\anaconda3\envs\unsloth_env\Lib\site-packages\torch\utils\_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\src\eval.py", line 80, in eval_one_batch
+    print(token_acc[:, mask].mean().item())
+                       ^^^^
+UnboundLocalError: cannot access local variable 'mask' where it is not associated with a value

@@ -1,0 +1,146 @@
+_wandb:
+    value:
+        cli_version: 0.21.3
+        e:
+            rtiaatwruxp7iomhx6jjrlbkq5t28r42:
+                codePath: src\eval.py
+                codePathLocal: src\eval.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "12.7"
+                disk:
+                    /:
+                        total: "999261802496"
+                        used: "538977853440"
+                email: hhm2000@hw.ac.uk
+                executable: C:\Users\hamza\anaconda3\envs\unsloth_env\python.exe
+                git:
+                    commit: 582f3b87bcedb38e3867b526d1f61aea7bd89592
+                    remote: git@github.com:hamzamooraj99/tiny-transformer-mech-interp.git
+                gpu: NVIDIA GeForce RTX 3060 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 3840
+                      memoryTotal: "6442450944"
+                      name: NVIDIA GeForce RTX 3060 Laptop GPU
+                      uuid: GPU-5599f56e-1e3c-9467-7079-b7ff85c16539
+                host: C-173-G14
+                memory:
+                    total: "25131368448"
+                os: Windows-10-10.0.22631-SP0
+                program: c:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\src\eval.py
+                python: CPython 3.11.11
+                root: C:\Users\hamza\Documents\AI\tiny-transformer-mech-interp
+                startedAt: "2026-03-03T13:03:37.258682Z"
+                writerId: rtiaatwruxp7iomhx6jjrlbkq5t28r42
+        m: []
+        python_version: 3.11.11
+        t:
+            "1":
+                - 1
+                - 105
+            "2":
+                - 1
+                - 105
+            "3":
+                - 2
+                - 13
+                - 16
+                - 61
+                - 62
+            "4": 3.11.11
+            "5": 0.21.3
+            "8":
+                - 3
+            "12": 0.21.3
+            "13": windows-amd64
+        visualize:
+            eval/accuracy_bar:
+                panel_config:
+                    fieldSettings:
+                        label: metric
+                        value: value
+                    panelDefId: wandb/bar/v0
+                    stringSettings:
+                        title: Evaluation Accuracy Metrics
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: eval/accuracy_bar_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+            eval/loss_bar:
+                panel_config:
+                    fieldSettings:
+                        label: metric
+                        value: value
+                    panelDefId: wandb/bar/v0
+                    stringSettings:
+                        title: Evaluation Loss Metrics
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: eval/loss_bar_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+batch_size:
+    value: 64
+checkpoint_path:
+    value: checkpoints/exp_0.pt
+d_model:
+    value: 64
+eval_batches:
+    value: 50
+max_seq_len:
+    value: 32
+mlp_hidden_dim:
+    value: 256
+mode:
+    value: induction
+n_heads:
+    value: 4
+n_layers:
+    value: 2
+p_corrupt_eval:
+    value: 0
+pattern_len:
+    value: 8
+run_name:
+    value: Induction_exp_0-EVAL
+seed:
+    value: 42
+seq_len:
+    value: 32
+vocab_size:
+    value: 20

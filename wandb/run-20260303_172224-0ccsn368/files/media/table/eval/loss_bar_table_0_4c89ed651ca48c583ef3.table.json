@@ -1,0 +1,1 @@
+{"columns": ["metric", "value"], "data": [["eval/loss", 0.6777396512031555], ["eval/induction/loss", 0.0005148812744300812], ["eval/early/loss", 2.999653377532959]]}

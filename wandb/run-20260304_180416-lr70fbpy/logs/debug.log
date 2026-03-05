@@ -1,0 +1,28 @@
+2026-03-04 18:04:16,164 INFO    MainThread:28076 [wandb_setup.py:_flush():81] Current SDK version is 0.21.3
+2026-03-04 18:04:16,164 INFO    MainThread:28076 [wandb_setup.py:_flush():81] Configure stats pid to 28076
+2026-03-04 18:04:16,164 INFO    MainThread:28076 [wandb_setup.py:_flush():81] Loading settings from C:\Users\hamza\.config\wandb\settings
+2026-03-04 18:04:16,164 INFO    MainThread:28076 [wandb_setup.py:_flush():81] Loading settings from C:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\wandb\settings
+2026-03-04 18:04:16,164 INFO    MainThread:28076 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-03-04 18:04:16,164 INFO    MainThread:28076 [wandb_init.py:setup_run_log_directory():686] Logging user logs to C:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\wandb\run-20260304_180416-lr70fbpy\logs\debug.log
+2026-03-04 18:04:16,165 INFO    MainThread:28076 [wandb_init.py:setup_run_log_directory():687] Logging internal logs to C:\Users\hamza\Documents\AI\tiny-transformer-mech-interp\wandb\run-20260304_180416-lr70fbpy\logs\debug-internal.log
+2026-03-04 18:04:16,165 INFO    MainThread:28076 [wandb_init.py:init():813] calling init triggers
+2026-03-04 18:04:16,165 INFO    MainThread:28076 [wandb_init.py:init():818] wandb.init called with sweep_config: {}
+config: {'vocab_size': 20, 'seq_len': 32, 'pattern_len': 8, 'batch_size': 64, 'max_seq_len': 32, 'd_model': 64, 'n_heads': 4, 'n_layers': 2, 'mlp_hidden_dim': 256, 'seed': 3407, 'p_corrupt_eval': 0.0, 'eval_batches': 50, 'run_name': 'Induction_exp_1-EVAL', 'checkpoint_path': 'checkpoints/baseline.pt', 'mode': 'induction', '_wandb': {}}
+2026-03-04 18:04:16,165 INFO    MainThread:28076 [wandb_init.py:init():854] starting backend
+2026-03-04 18:04:18,548 INFO    MainThread:28076 [wandb_init.py:init():857] sending inform_init request
+2026-03-04 18:04:18,585 INFO    MainThread:28076 [wandb_init.py:init():865] backend started and connected
+2026-03-04 18:04:18,586 INFO    MainThread:28076 [wandb_init.py:init():936] updated telemetry
+2026-03-04 18:04:18,648 INFO    MainThread:28076 [wandb_init.py:init():960] communicating run to backend with 90.0 second timeout
+2026-03-04 18:04:19,886 INFO    MainThread:28076 [wandb_init.py:init():1011] starting run threads in backend
+2026-03-04 18:04:20,628 INFO    MainThread:28076 [wandb_run.py:_console_start():2494] atexit reg
+2026-03-04 18:04:20,629 INFO    MainThread:28076 [wandb_run.py:_redirect():2342] redirect: wrap_raw
+2026-03-04 18:04:20,629 INFO    MainThread:28076 [wandb_run.py:_redirect():2411] Wrapping output streams.
+2026-03-04 18:04:20,629 INFO    MainThread:28076 [wandb_run.py:_redirect():2434] Redirects installed.
+2026-03-04 18:04:20,635 INFO    MainThread:28076 [wandb_init.py:init():1057] run started, returning control to user process
+2026-03-04 18:04:26,470 INFO    MainThread:28076 [wandb_run.py:_config_callback():1380] config_cb ('_wandb', 'visualize', 'eval/accuracy_bar') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/bar/v0', 'fieldSettings': {'label': 'metric', 'value': 'value'}, 'stringSettings': {'title': 'Evaluation Accuracy Metrics'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'eval/accuracy_bar_table'}], 'fields': []}]}]}}} None
+2026-03-04 18:04:27,997 INFO    MainThread:28076 [wandb_run.py:_config_callback():1380] config_cb ('_wandb', 'visualize', 'eval/loss_bar') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/bar/v0', 'fieldSettings': {'label': 'metric', 'value': 'value'}, 'stringSettings': {'title': 'Evaluation Loss Metrics'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'eval/loss_bar_table'}], 'fields': []}]}]}}} None
+2026-03-04 18:04:28,910 INFO    MainThread:28076 [wandb_run.py:_finish():2260] finishing run hhm2000-heriot-watt-university/Tiny-Transformer-Mech-Interp/lr70fbpy
+2026-03-04 18:04:28,910 INFO    MainThread:28076 [wandb_run.py:_atexit_cleanup():2459] got exitcode: 0
+2026-03-04 18:04:28,911 INFO    MainThread:28076 [wandb_run.py:_restore():2441] restore
+2026-03-04 18:04:28,911 INFO    MainThread:28076 [wandb_run.py:_restore():2447] restore done
+2026-03-04 18:04:32,883 INFO    MainThread:28076 [wandb_run.py:_footer_sync_info():3855] logging synced files

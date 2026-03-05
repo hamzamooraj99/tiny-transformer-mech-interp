@@ -4,50 +4,14 @@ import torch
 import torch.nn.functional as F
 from tqdm import tqdm
 import wandb
-from src.data import generate_batch
-from src.model import TinyCausalTransformer
+from data import generate_batch
+from model import TinyCausalTransformer
+from config import TRAIN_CFG as CFG, WANDB_PROJECT
+from seed_utils import set_global_seed
 
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-CFG = {
-    'vocab_size': 20,
-    'seq_len': 32,
-    'pattern_len': 8,
-    'batch_size': 64,
-    'd_model': 64,
-    'n_heads': 4,
-    'n_layers': 2,
-    'mlp_hidden_dim': 256,
-    'max_seq_len': 32,
-    'lr': 1e-3,
-    'steps': 2000,
-    'p_corrupt_train': 0.0,
-    'seed': 42,
-    'run_name': "TinyTransformerTest1"
-}
-
-wandb.init(
-    project="Tiny-Transformer-Mech-Interp",
-    name=CFG['run_name'],
-    config=CFG,
-)
-
-if __name__ == "__main__":
-    model = TinyCausalTransformer(
-        vocab_size=CFG['vocab_size'],
-        d_model=CFG['d_model'],
-        n_heads=CFG['n_heads'],
-        n_layers=CFG['n_layers'],
-        mlp_hidden_dim=CFG['mlp_hidden_dim'],
-        max_seq_len=CFG['max_seq_len'],
-    )
-    model.to(DEVICE)
-    optim = torch.optim.AdamW(model.parameters(), lr=CFG['lr'])
-    model.train()
-
-    n_params = sum(p.numel() for p in model.parameters())
-    # print("n_params:", n_params)
-
+def train(model: TinyCausalTransformer, optim: torch.optim.AdamW, ):
     pbar = tqdm(range(CFG["steps"]))
     for step in pbar:   
         #1. Generate Batch
@@ -56,7 +20,6 @@ if __name__ == "__main__":
             seq_len=CFG['seq_len'],
             vocab_size=CFG['vocab_size'],
             pattern_len=CFG['pattern_len'],
-            seed=CFG['seed'],
             device=DEVICE,
             p_corrupt=CFG['p_corrupt_train'],
             mode="induction"
@@ -92,5 +55,33 @@ if __name__ == "__main__":
                 "train/loss": loss.item(),
                 "train/step": step
             })
+    
+    torch.save(model.state_dict(), "tiny_transformer.pt")
+
+if __name__ == "__main__":
+    set_global_seed(CFG["seed"])
+    CFG['run_name'] = "Induction_exp_0"
+
+    wandb.init(
+        project=WANDB_PROJECT,
+        name=CFG['run_name'],
+        config=CFG,
+    )
+
+    model = TinyCausalTransformer(
+        vocab_size=CFG['vocab_size'],
+        d_model=CFG['d_model'],
+        n_heads=CFG['n_heads'],
+        n_layers=CFG['n_layers'],
+        mlp_hidden_dim=CFG['mlp_hidden_dim'],
+        max_seq_len=CFG['max_seq_len'],
+    )
+    model.to(DEVICE)
+    optim = torch.optim.AdamW(model.parameters(), lr=CFG['lr'])
+    model.train()
+
+    n_params = sum(p.numel() for p in model.parameters())
+
+    train(model=model, optim=optim)
 
     wandb.finish()

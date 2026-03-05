@@ -1,0 +1,1 @@
+{"columns": ["metric", "value"], "data": [["eval/acc", 0.7853225564956665], ["eval/induction/acc", 1.0], ["eval/early/acc", 0.049285716563463214]]}
