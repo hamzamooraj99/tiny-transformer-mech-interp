@@ -18,6 +18,14 @@ The repository contains the full experimental pipeline:
 The goal is to demonstrate how **mechanistic interpretability methods can diagnose the
 internal strategies used by neural networks**, even when behavioural performance appears correct.
 
+## Full Report
+
+[Open the PDF report](report/main.pdf)
+
+<object data="report/main.pdf" type="application/pdf" width="100%" height="800">
+  <p>Please click on the above to read the report.</p>
+</object>
+
 ---
 
 # 1. Overview
